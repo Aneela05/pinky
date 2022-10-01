@@ -14,14 +14,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #edeef1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
+  background-image: linear-gradient(rgb(46, 125, 215), rgb(195, 124, 189));
 }
 
 .App-link {
@@ -35,4 +36,92 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.swamy-header-pic {
+  height: 72px;
+  object-fit: contain;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.navbar-header {
+  /* display: flex; */
+}
+
+.profile {
+  /* padding; 0 10px; */
+  margin-left: auto;
+}
+
+.swamy-pic-name {
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  display: flex;
+}
+
+.swamy-logo {
+  margin-left: auto;
+}
+
+.sidebar {
+  float: left;
+  min-width: 200px;
+  border: 1px solid #dddd;
+  min-height: 100vh;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+}
+.module {
+  padding:5px;
+}
+
+.module:hover {
+  background-color: rgb(68, 108, 172);
+}
+
+.snowflake {
+  --size: 1vw;
+  width: var(--size);
+  height: var(--size);
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -50vh;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(var(--left-ini),0,0);
+  }
+  100% {
+    transform: translate3d(var(--left-end), 110vh, 0);
+  }
+}
+
+/* @for $i from 1 through 50 {
+  .snowflake:nth-child(#{$i}) {
+    --size: #{random(5) * 0.2}vw;
+    --left-ini: #{random(20) - 10}vw;
+    --left-end: #{random(20) - 10}vw;
+    left: #{random(100)}vw;
+    animation: snowfall #{5 + random(10)}s linear infinite;
+    animation-delay: -#{random(10)}s;
+  }
+} */
+
+/* added small blur every 6 snowflakes*/
+/* .snowflake:nth-child(6n) {
+  filter: blur(1px);
+} */
+
+.popover-input {
+  width: 180px;
+padding:10px;
+}
+
+.popover {
+  min-width: 500px;
 }

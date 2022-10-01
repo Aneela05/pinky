@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Switch, Route }  from "react-router-dom"
 import './App.css';
+import Navbar from "./Navbar/Navbar"
+import Sidebar from "./SideBar/Sidebar"
+import News from "./NewsFeed/News"
+import NotesAdder from './Main/NotesAdder';
+import SpotifyDesign from "./Spotify/SpotifyDesign"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state ={
+      module: "dairy",
+    }
+  }
+  componentDidMount(){
+    this.handleChangeModule("diary")
+  }
+  handleChangeModule = (module) => {
+    this.setState({
+        module: module
+    })
+  }
+  render() {
+    const { module } = this.state
+    return (
+      <div className="App">
+        <Router>
+        <Routes>
+                <Route path="/spotify1" element={<SpotifyDesign />} />
+          </Routes>
+        <Navbar />
+        {/* <Sidebar change={this.handleChangeModule}/> */}
+        {/* <header className="App-header">
+          <NotesAdder module={module} />
+        </header> */}
+        {/* <News /> */}
+        </Router>
+      </div>
+    )
+  }
 }
 
 export default App;
